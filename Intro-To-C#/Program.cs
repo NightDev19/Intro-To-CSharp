@@ -13,7 +13,7 @@ namespace Intro_To_CSharp
             while (!exitProgram)
             {
                 DisplayMenu();
-                string choice = Console.ReadLine();
+                string? choice = Console.ReadLine();
 
                 switch (choice)
                 {
@@ -42,7 +42,12 @@ namespace Intro_To_CSharp
                         Console.WriteLine("======[Basics - Encapsulation]=====\n");
                         Encapsulation.DemonstrateEncapsulation();
                         break;
+                    case "6":
+                        Console.Clear();
+                        Console.WriteLine("======[Basics - Methods]=====\n");
+                        Methods.RunCalculator();
 
+                        break;
                     case "0":
                         exitProgram = true;
                         Console.WriteLine("Goodbye!");

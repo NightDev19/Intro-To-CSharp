@@ -46,7 +46,7 @@ namespace Intro_To_CSharp.Basics.OOP
         }
 
 
-        public void RunCalculator()
+        public static void RunCalculator()
         {
             while (true)
             {
