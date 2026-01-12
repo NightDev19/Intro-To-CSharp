@@ -9,11 +9,12 @@ namespace Intro_To_CSharp.Basics
             Console.WriteLine("╔════════════════════════════════════════╗");
             Console.WriteLine("║       Control Flow Demonstration       ║");
             Console.WriteLine("╠════════════════════════════════════════╣");
-            Console.WriteLine("║  1. if                                 ║");
-            Console.WriteLine("║  2. if else                            ║");
-            Console.WriteLine("║  3. if else if else                    ║");
-            Console.WriteLine("║  4. nested if                          ║");
-            Console.WriteLine("║  5. switch                             ║");
+            Console.WriteLine("║  1. If                                 ║");
+            Console.WriteLine("║  2. If else                            ║");
+            Console.WriteLine("║  3. If else if else                    ║");
+            Console.WriteLine("║  4. Nested if                          ║");
+            Console.WriteLine("║  5. Switch                             ║");
+            Console.WriteLine("║  5. Ternary                            ║");
             Console.WriteLine("║                                        ║");
             Console.WriteLine("║  0. Back to Main Menu                  ║");
             Console.WriteLine("╚════════════════════════════════════════╝");
@@ -94,6 +95,12 @@ namespace Intro_To_CSharp.Basics
                     break;
             }
         }
+        private static void Ternary()
+        {
+            int age = 18;
+            string result = (age > 18) ? "Adult" : "Teenager";
+            Console.WriteLine(result);
+        }
 
         public static void Demonstrate()
         {
@@ -121,6 +128,9 @@ namespace Intro_To_CSharp.Basics
                         break;
                     case "5":
                         SwitchExample();
+                        break;
+                    case "6":
+                        Ternary();
                         break;
                     case "0":
                         Console.WriteLine("Returning to Main Menu...");
