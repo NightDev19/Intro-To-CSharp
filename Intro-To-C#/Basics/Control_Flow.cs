@@ -98,7 +98,7 @@ namespace Intro_To_CSharp.Basics
         private static void Ternary()
         {
             int age = 18;
-            string result = (age > 18) ? "Adult" : "Teenager";
+            string result = (age >= 18) ? "Adult" : "Teenager";
             Console.WriteLine(result);
         }
 

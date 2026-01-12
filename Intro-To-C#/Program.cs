@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Intro_To_CSharp.Basics;
 using Intro_To_CSharp.Basics.OOP;
 
@@ -6,85 +7,74 @@ namespace Intro_To_CSharp
 {
     internal class Program
     {
+        private static readonly Dictionary<string, (string title, Action action)> MenuActions = new()
+        {
+            ["1"] = ("Variables and Data Types", Var_And_DataTypes.DemonstrateVariables),
+            ["2"] = ("Control Flow", Control_Flow.Demonstrate),
+            ["3"] = ("Error Handling", Error_Handling.Demonstrate),
+            ["4"] = ("Loops", Loops.Demonstrate),
+            ["5"] = ("Array", Arrays.DemonstrateArray),
+            ["6"] = ("Encapsulation", Encapsulation.DemonstrateEncapsulation),
+            ["7"] = ("Methods", Methods.RunCalculator)
+        };
+
         private static void Main(string[] args)
         {
-            bool exitProgram = false;
-
-            while (!exitProgram)
+            while (true)
             {
                 DisplayMenu();
                 string? choice = Console.ReadLine();
 
-                switch (choice)
+                if (choice == "0")
                 {
-                    case "1":
-                        Console.Clear();
-                        Console.WriteLine("======[Basics - Variables and Data Types]=====\n");
-                        Var_And_DataTypes.DemonstrateVariables();
-                        break;
-                    case "2":
-                        Console.Clear();
-                        Console.WriteLine("======[Basics - Control Flow]=====\n");
-                        Control_Flow.Demonstrate();
-                        break;
-                    case "3":
-                        Console.Clear();
-                        Console.WriteLine("======[Basics - Error Handing]=====\n");
-                        Error_Handling.Demonstrate();
-                        break;
-                    case "4":
-                        Console.Clear();
-                        Console.WriteLine("======[Basics - Loops]=====\n");
-                        Loops.Demonstrate();
-                        break;
-                    case "5":
-                        Console.Clear();
-                        Console.WriteLine("======[Basics - Encapsulation]=====\n");
-                        Encapsulation.DemonstrateEncapsulation();
-                        break;
-                    case "6":
-                        Console.Clear();
-                        Console.WriteLine("======[Basics - Methods]=====\n");
-                        Methods.RunCalculator();
-
-                        break;
-                    case "0":
-                        exitProgram = true;
-                        Console.WriteLine("Goodbye!");
-                        break;
-
-                    default:
-                        Console.WriteLine("\nInvalid choice. Please try again.\n");
-                        break;
+                    Console.WriteLine("Goodbye!");
+                    break;
                 }
 
-                if (!exitProgram)
+                if (MenuActions.TryGetValue(choice ?? "", out var menuItem))
                 {
-                    Console.WriteLine("\n\nPress any key to continue...");
-                    Console.ReadKey();
-                    Console.Clear();
+                    ExecuteDemo(menuItem.title, menuItem.action);
                 }
+                else
+                {
+                    Console.WriteLine("\nInvalid choice. Please try again.\n");
+                }
+
+                Console.WriteLine("\n\nPress any key to continue...");
+                Console.ReadKey();
+                Console.Clear();
             }
+        }
+
+        private static void ExecuteDemo(string title, Action demoAction)
+        {
+            Console.Clear();
+            Console.WriteLine($"======[Basics - {title}]=====\n");
+            demoAction();
         }
 
         private static void DisplayMenu()
         {
-            Console.WriteLine("╔════════════════════════════════════════╗");
-            Console.WriteLine("║     C# Learning Topics Menu            ║");
-            Console.WriteLine("╠════════════════════════════════════════╣");
-            Console.WriteLine("║  [Basics]                              ║");
-            Console.WriteLine("║  1. Variables and Data Types           ║");
-            Console.WriteLine("║  2. Control Flow (if/else/switch)      ║");
-            Console.WriteLine("║  3. Error Handling(try...catch)        ║");
-            Console.WriteLine("║  4. Loops (for/while/foreach)          ║");
-            Console.WriteLine("╚════════════════════════════════════════╝");
-            Console.WriteLine("╔════════════════════════════════════════╗");
-            Console.WriteLine("║               C# OOP                   ║");
-            Console.WriteLine("╠════════════════════════════════════════╣");
-            Console.WriteLine("║  5. Encapsulation                      ║");
-            Console.WriteLine("║                                        ║");
-            Console.WriteLine("║  0. Exit                               ║");
-            Console.WriteLine("╚════════════════════════════════════════╝");
+            Console.WriteLine(
+                "╔════════════════════════════════════════╗\n" +
+                "║     C# Learning Topics Menu            ║\n" +
+                "╠════════════════════════════════════════╣\n" +
+                "║  [Basics]                              ║\n" +
+                "║  1. Variables and Data Types           ║\n" +
+                "║  2. Control Flow (if/else/switch)      ║\n" +
+                "║  3. Error Handling(try...catch)        ║\n" +
+                "║  4. Loops (for/while/foreach)          ║\n" +
+                "║  5. Arrays                             ║\n" +
+                "╚════════════════════════════════════════╝\n" +
+                "╔════════════════════════════════════════╗\n" +
+                "║               C# OOP                   ║\n" +
+                "╠════════════════════════════════════════╣\n" +
+                "║  6. Encapsulation                      ║\n" +
+                "║  7. Methods                            ║\n" +
+                "║                                        ║\n" +
+                "║  0. Exit                               ║\n" +
+                "╚════════════════════════════════════════╝"
+            );
             Console.Write("\nEnter your choice: ");
         }
     }

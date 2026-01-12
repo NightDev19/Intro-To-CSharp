@@ -5,22 +5,22 @@ namespace Intro_To_CSharp.Basics.OOP
     internal class Methods
     {
 
-        public int Add(int x, int y)
+        public static int Add(int x, int y)
         {
             return x + y;
         }
 
-        public int Subtract(int x, int y)
+        public static int Subtract(int x, int y)
         {
             return x - y;
         }
 
-        public int Multiply(int x, int y)
+        public static int Multiply(int x, int y)
         {
             return x * y;
         }
 
-        public double Divide(int x, int y)
+        public static double Divide(int x, int y)
         {
             if (y == 0)
             {
