@@ -15,7 +15,9 @@ namespace Intro_To_CSharp.Basics
             Console.WriteLine("║  2. While Loop                         ║");
             Console.WriteLine("║  3. Do-While Loop                      ║");
             Console.WriteLine("║  4. Nested Loop (Heart Pattern)        ║");
-            Console.WriteLine("║  5. Foreach Loop                       ║");
+            Console.WriteLine("║  5. Break                              ║");
+            Console.WriteLine("║  6. Continue                           ║");
+            Console.WriteLine("║  7. Foreach Loop                       ║");
             Console.WriteLine("║                                        ║");
             Console.WriteLine("║  0. Back to Main Menu                  ║");
             Console.WriteLine("╚════════════════════════════════════════╝");
@@ -101,6 +103,39 @@ namespace Intro_To_CSharp.Basics
             Console.ResetColor();
         }
 
+        public static void Break()
+        {
+            Console.WriteLine("Break Statement - Exiting a loop early:\n");
+            Console.WriteLine("Counting from 1 to 10, but will stop at 5:\n");
+            for (int i = 1; i <= 10; i++)
+            {
+                if (i == 5)
+                {
+                    Console.WriteLine("Reached 5, exiting the loop.");
+                    break;
+                }
+                Console.WriteLine($"Current number: {i}");
+            }
+            Console.WriteLine("\nLoop exited early using break statement.");
+
+        }
+
+        public static void Continue()
+        {
+            Console.WriteLine("Continue Statement - Skipping an iteration:\n");
+            Console.WriteLine("Counting from 1 to 10, but will skip 5:\n");
+            for (int i = 1; i <= 10; i++)
+            {
+                if (i == 5)
+                {
+                    Console.WriteLine("Skipping 5.");
+                    continue;
+                }
+                Console.WriteLine($"Current number: {i}");
+            }
+            Console.WriteLine("\nCompleted loop with continue statement.");
+        }
+
         public static void ForeachLoop()
         {
             Console.WriteLine("Foreach Loop - Iterating through a collection:\n");
@@ -158,8 +193,9 @@ namespace Intro_To_CSharp.Basics
                         ShowHeader("Nested Loop");
                         NestedLoop();
                         break;
-
                     case "5":
+
+                    case "6":
                         ShowHeader("Foreach Loop");
                         ForeachLoop();
                         break;
