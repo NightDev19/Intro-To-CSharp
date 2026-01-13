@@ -33,6 +33,13 @@ namespace Intro_To_CSharp.Basics
             {
                 Console.WriteLine("Pokemon " + (x + 1) + ": " + arr[x]);
             }
+
+            // Using For Each Loop
+            Console.WriteLine("\nUsing For Each Loop to display Pokemons:\n");
+            foreach (string pokemon in arr)
+            {
+                Console.WriteLine("Pokemon: " + pokemon);
+            }
         }
     }
 }
