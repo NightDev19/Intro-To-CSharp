@@ -18,7 +18,8 @@ namespace Intro_To_CSharp
             ["7"] = ("String", Strings.Demonstrate),
             ["8"] = ("Encapsulation", Encapsulation.DemonstrateEncapsulation),
             ["9"] = ("Methods", Methods.RunCalculator),
-            ["10"] = ("Structures", Structures.Demonstrate)
+            ["10"] = ("Structures", Structures.Demonstrate),
+            ["11"] = ("Enums", Enums.Demonstations)
         };
 
         private static void Main(string[] args)
@@ -77,6 +78,7 @@ namespace Intro_To_CSharp
                 "║  8. Encapsulation                      ║\n" +
                 "║  9. Methods                            ║\n" +
                 "║  10. Structure                         ║\n" +
+                "║  11. Enums                             ║\n" +
                 "║                                        ║\n" +
                 "║  0. Exit                               ║\n" +
                 "╚════════════════════════════════════════╝"

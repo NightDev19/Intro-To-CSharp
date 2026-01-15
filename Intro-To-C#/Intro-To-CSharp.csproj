@@ -14,4 +14,10 @@
     <None Remove="Variable_And_DataTypes\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="CodeFusion.Plc.Core">
+      <HintPath>..\..\..\..\Documents\CodeFusion.Plc.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
