@@ -133,37 +133,30 @@ namespace Intro_To_CSharp.Basics.OOP
 
             Console.WriteLine("Unknown Role");
         }
+
+        public static void Run()
+        {
+            Console.WriteLine("Permission Management Demo:");
+            PermissionManagement.Demonstrate(Permission.FullControl);
+            PermissionManagement.Demonstrate(Permission.Read | Permission.Write);
+            PermissionManagement.Demonstrate(Permission.None);
+            PermissionManagement.Demonstrate(Permission.Write);
+            PermissionManagement.Demonstrate(Permission.Read);
+        }
     }
 
     internal class Enums
     {
 
-            public static void Demonstations()
-            {
+        public static void Demonstations()
+        {
 
-                EnumDays.Demonstrate();
-                Console.WriteLine();
-                IdentifyStatusCode.Demonstrate();
-                Console.WriteLine();
-
-
-                Console.WriteLine("Permission Management Demo:");
-
-
-                PermissionManagement.Demonstrate(Permission.FullControl);
-
-
-                PermissionManagement.Demonstrate(Permission.Read | Permission.Write);
-
-
-                PermissionManagement.Demonstrate(Permission.None);
-
-                PermissionManagement.Demonstrate(Permission.Write);
-                PermissionManagement.Demonstrate(Permission.Read);
-
+            EnumDays.Demonstrate();
+            Console.WriteLine();
+            IdentifyStatusCode.Demonstrate();
+            Console.WriteLine();
+            PermissionManagement.Run();
         }
-        
-
     }
 }
 

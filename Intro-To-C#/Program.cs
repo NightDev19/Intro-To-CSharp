@@ -5,6 +5,13 @@ using Intro_To_CSharp.Basics.OOP;
 
 namespace Intro_To_CSharp
 {
+    class Projects
+    {
+        public static void Run()
+        {
+            PersonalProject.InventoryManagement.Run();
+        }
+    }
     internal class Program
     {
         private static readonly Dictionary<string, (string title, Action action)> MenuActions = new()
@@ -19,7 +26,8 @@ namespace Intro_To_CSharp
             ["8"] = ("Encapsulation", Encapsulation.DemonstrateEncapsulation),
             ["9"] = ("Methods", Methods.RunCalculator),
             ["10"] = ("Structures", Structures.Demonstrate),
-            ["11"] = ("Enums", Enums.Demonstations)
+            ["11"] = ("Enums", Enums.Demonstations),
+            ["999"] = ("Projects", Projects.Run)
         };
 
         private static void Main(string[] args)
@@ -80,6 +88,8 @@ namespace Intro_To_CSharp
                 "║  10. Structure                         ║\n" +
                 "║  11. Enums                             ║\n" +
                 "║                                        ║\n" +
+                "╠════════════════════════════════════════╣\n" +
+                "║  999. Projects                         ║\n" +
                 "║  0. Exit                               ║\n" +
                 "╚════════════════════════════════════════╝"
             );
